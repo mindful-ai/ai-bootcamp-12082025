@@ -1,0 +1,1 @@
+apple,mango,cherry,banana,pineapple,tomato,onion,clove,ginger,coriander
