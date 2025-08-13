@@ -1,0 +1,16 @@
+[project]
+name = "word-jumble-game"
+version = "0.1.0"
+description = "A fun Python word jumble game with CLI support."
+authors = [{ name = "Your Name", email = "you@example.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[project.scripts]
+word-jumble-game = "word_jumble_game.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

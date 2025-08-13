@@ -1,0 +1,21 @@
+C:\mindful-ai\sapient-ds\2025\work\day-02\python-tools>python -m uv init word-jumble-game
+error: Project is already initialized in `C:\mindful-ai\sapient-ds\2025\work\day-02\python-tools\word-jumble-game` (`pyproject.toml` file exists)
+
+NOTE: Error is because the .toml file is already configured
+
+C:\mindful-ai\sapient-ds\2025\work\day-02\python-tools>cd word-jumble-game
+
+C:\mindful-ai\sapient-ds\2025\work\day-02\python-tools\word-jumble-game>python -m uv sync  
+Using CPython 3.12.10 interpreter at: C:\Users\mindf\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe
+Creating virtual environment at: .venv
+Resolved 1 package in 13ms
+      Built word-jumble-game @ file:///C:/mindful-ai/sapient-ds/2025/work/day-02/python-tools/w
+Prepared 1 package in 1.24s
+Installed 1 package in 16ms
+ + word-jumble-game==0.1.0 (from file:///C:/mindful-ai/sapient-ds/2025/work/day-02/python-tools/word-jumble-game)
+
+C:\mindful-ai\sapient-ds\2025\work\day-02\python-tools\word-jumble-game>python -m uv build
+Building source distribution...
+Building wheel from source distribution...
+Successfully built dist\word_jumble_game-0.1.0.tar.gz
+Successfully built dist\word_jumble_game-0.1.0-py3-none-any.whl

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "word-jumble-game"
+version = "0.1.0"
+description = "A fun Python word jumble game with CLI support."
+authors = ["Purushotham <purushotham.s@mindfullearning.in>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "wordjumble" }]
+homepage = "https://github.com/mindful-ai/word-jumble-game"
+repository = "https://github.com/mindful-ai/word-jumble-game"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.scripts]
+wordjumble = "wordjumble.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
