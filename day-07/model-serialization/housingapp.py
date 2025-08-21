@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 import os.path
 
-class housing(object):
+class Housing(object):
 
     def __init__(self, datasource):
         self.datasource = datasource
@@ -74,8 +74,8 @@ class housing(object):
 
 if __name__ == '__main__':
 
-    file = r'C:\mindful-ai\sapient-ds\presentation\week-02\machine-learning-algos\linear-regression\USA_Housing.csv'
-    h = housing(file)
+    file = r'USA_Housing.csv'
+    h = Housing(file)
     print('Data Aquisition:   >> ', h.acquire())
     print('Data Preparation:  >> ', h.prepare())
     print('Splitting:         >> ', h.split())
