@@ -1,0 +1,39 @@
+# k8s/frontend.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: ml-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: multi_container_ml_app-frontend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8501
+        env:
+        - name: BACKEND_URL
+          value: "http://backend:5002/predict"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: ml-demo
+spec:
+  type: NodePort
+  selector:
+    app: frontend
+  ports:
+    - port: 8501
+      targetPort: 8501
+      nodePort: 30080

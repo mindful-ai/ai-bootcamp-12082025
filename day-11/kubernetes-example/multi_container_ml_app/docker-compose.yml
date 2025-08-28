@@ -1,0 +1,51 @@
+version: "3.9"
+services:
+  model_serving:
+    build: ./model_serving
+    container_name: model_serving
+    ports:
+      - "5001:5001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    container_name: backend
+    depends_on:
+      model_serving:
+        condition: service_healthy
+    environment:
+      - MODEL_SERVING_URL=http://model_serving:5001/predict
+      - LOGGER_URL=http://logger:5003/log
+    ports:
+      - "5002:5002"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - BACKEND_URL=http://backend:5002/predict
+    ports:
+      - "8501:8501"
+
+  logger:
+    build: ./logger
+    container_name: logger
+    ports:
+      - "5003:5003"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20

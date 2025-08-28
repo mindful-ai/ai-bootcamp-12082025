@@ -1,0 +1,39 @@
+# k8s/backend.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: ml-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: multi_container_ml_app-backend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5002
+        env:
+        - name: MODEL_SERVING_URL
+          value: "http://model-serving:5001/predict"
+        - name: LOGGER_URL
+          value: "http://logger:5003/log"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: ml-demo
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 5002
+      targetPort: 5002
