@@ -1,4 +1,4 @@
-# End-to-End YOLO Tutorial (from "what it is" to "ship it")
+# YOLO Tutorial
 
 Below is a practical, opinionated path that gets you from zero to a
 trained, evaluated, and deployed YOLO model---plus just enough history
