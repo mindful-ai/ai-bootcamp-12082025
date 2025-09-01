@@ -385,3 +385,4 @@ if __name__ == "__main__":
 ## 20) What you can do next
 
 -    Refer **yolo_datasets.md**. Pick a dataset and train a YOLO model
+-    Read **https://blog.roboflow.com/yolo-object-detection/**
