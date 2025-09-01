@@ -384,8 +384,4 @@ if __name__ == "__main__":
 
 ## 20) What you can do next
 
--   Want a **ready-to-run repo skeleton** (data config, train/val
-    scripts, FastAPI server, Dockerfile)? Say the word and I'll drop a
-    complete template you can zip and run.
--   If you share **your dataset topic** (e.g., helmets vs. no-helmets),
-    I can pre-tune hyperparameters and augmentations for that domain.
+-    Refer **yolo_datasets.md**. Pick a dataset and train a YOLO model
