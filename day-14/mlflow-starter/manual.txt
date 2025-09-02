@@ -5,8 +5,8 @@ Create a virtual environment | Install mlflow | Test
 > virtualenv mlflow
 > mlflow/Scripts/activate.bat
 
-> pip install mlflow
-
+(> pip install mlflow)
+> pip install mlflow[extras] scikit-learn pandas matplotlib joblib
 > mlflow
 
 > mlflow ui 
