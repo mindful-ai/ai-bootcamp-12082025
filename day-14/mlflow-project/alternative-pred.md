@@ -1,5 +1,8 @@
 mlflow models serve -m runs:/<your_run_id>/loan_model -p 1234
 
+mlflow models serve -m runs:/b24a44670d92417fb8f14274da808120/RandomForestClassifier -p 1234 --env-manager=local
+
+
 curl -X POST http://127.0.0.1:1234/invocations \
     -H 'Content-Type: application/json' \
     -d '{
@@ -17,3 +20,4 @@ curl -X POST http://127.0.0.1:1234/invocations \
             "Property_Area": 2
         }]
     }'
+
