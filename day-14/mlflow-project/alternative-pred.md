@@ -49,4 +49,14 @@ POST -> http://127.0.0.1:1234/invocations
 HEADER -> Content-Type application/json
 BODY -> raw JSON
 
+Creating Dockerfile:
+mlflow models generate-dockerfile --model-uri runs:/b24a44670d92417fb8f14274da808120/RandomForestClassifier --output-directory ./docker_model
 
+or
+
+
+mlflow models build-docker --model-uri runs:/b24a44670d92417fb8f14274da808120/RandomForestClassifier --name loan_predictor_model_image
+
+
+docker build -t loan_predictor_model_image .
+docker run -p 5000:8080 loan_predictor_model_image
