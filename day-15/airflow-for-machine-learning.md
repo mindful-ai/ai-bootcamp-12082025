@@ -233,7 +233,7 @@ with DAG(
 
 curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d "[6.1, 2.8, 4.7, 1.2]"
 
-curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d "{\"features\": [6.1, 2.8, 4.7, 1.2]}"
+curl -X POST "http://localhost:9000/predict" -H "Content-Type: application/json" -d "{\"features\": [6.1, 2.8, 4.7, 1.2]}"
 
 
 ```

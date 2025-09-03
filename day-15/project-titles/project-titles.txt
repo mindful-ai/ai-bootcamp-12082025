@@ -1,0 +1,36 @@
+Act as a project group manager. Your job is to randomly form a group and assign a project. The following 
+are the project titles:
+
+
+News Article Categorization & Extractive Summarization |
+Fake News Detection + Explainability |
+Customer Support Ticket Classifier |
+Job Description Matching (Similarity + Classification) |
+Scientific Paper Categorization + Extractive Summary |
+
+Here is the list of participants:
+
+Abhishek Niranjan Mandlik
+Ajay Naidu
+Anurag Gan Chaudhuri
+Aryan Adinath Popalghat
+Atharva Tiwari
+Deepika
+Harshit Saini
+Ishita Khatri
+Kanika Dixit
+Nithin Bhavan
+Pusala Surendra Babu
+Ram Madanrao Kandalkar
+Satya Murali
+Shashank Sharma
+Shuaib Jawid Shahna
+Simhadri Sevitha
+Varun Arya
+Yasaswini Yerraballi
+Yash Nilesh Bodke
+Yatharth Manchanda
+Yuvraj Ravindra Wale
+
+Make 5 groups by random section of projects and participants (minimum 4 participants in group) and 
+Give me a table with two columns: project name and participants
