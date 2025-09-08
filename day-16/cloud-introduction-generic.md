@@ -1,5 +1,5 @@
 
-# Cloud Technology Workshop (Part 1–6)
+# Cloud Technology Workshop  
 
 ## 1. Introduction to Cloud Technology
 - Cloud computing is the delivery of computing services (servers, storage, databases, networking, software, analytics, AI) over the Internet (“the cloud”).
