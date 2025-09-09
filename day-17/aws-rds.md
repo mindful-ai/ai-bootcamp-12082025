@@ -1,7 +1,7 @@
 
 ---
 
-# **AWS RDS (Relational Database Service) – Workshop Manual**
+**AWS RDS (Relational Database Service) – Workshop Manual**
 
 ```markdown
 # AWS RDS (Relational Database Service) – Workshop Manual
@@ -80,5 +80,6 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
 - RDS simplifies relational database management.
 - Supports multiple popular engines.
 - Hands-on: launched MySQL RDS, connected via EC2, ran queries.
+
 
 
