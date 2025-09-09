@@ -54,9 +54,11 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
 2. Install MySQL client:  
    ```bash
    sudo yum install mysql -y
+   ```
 3. Connect to RDS
     ```bash
     mysql -h <RDS-endpoint> -u <username> -p
+    ```
 4. Create a table
     ```sql
     CREATE DATABASE demo;
@@ -64,6 +66,7 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
     CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(50));
     INSERT INTO users VALUES (1, 'Alice'), (2, 'Bob');
     SELECT * FROM users;
+    ```
 
 
 ### Best Practices
@@ -77,4 +80,5 @@ Launch a free-tier MySQL RDS instance and connect via MySQL client.
 - RDS simplifies relational database management.
 - Supports multiple popular engines.
 - Hands-on: launched MySQL RDS, connected via EC2, ran queries.
+
 
