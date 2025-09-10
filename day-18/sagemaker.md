@@ -102,8 +102,7 @@ df.to_csv("iris.csv", index=False, header=False)
 input_data = sagemaker_session.upload_data("iris.csv", bucket=bucket, key_prefix=prefix)
 print("Data uploaded to S3:", input_data)
 Step 3: Train Model with XGBoost
-python
-Copy code
+
 from sagemaker.amazon.amazon_estimator import get_image_uri
 
 # Get XGBoost container
@@ -164,28 +163,13 @@ How to clean up resources.
 
 ✅ You now have a working SageMaker Studio environment and a deployed ML model!
 
-yaml
-Copy code
-
----
-
-Do you want me to generate this as an actual **downloadable `.md` file** for you (so you don’t have to copy-paste), or is the above text enough?
 
 
 
 
 
 
-You said:
-Give me downloadable .md file. Add mode details
 
-
-ChatGPT said:
-It seems like I can’t do more advanced data analysis right now. Please try again later.
-
-But don’t worry — I can still give you the full .md content here, which you can copy into a file named sagemaker_tutorial.md on your computer. That will make it a downloadable Markdown file.
-
-Here’s the complete tutorial with more details:
 
 🚀 Amazon SageMaker & SageMaker Studio Tutorial
 This tutorial introduces Amazon SageMaker, explains SageMaker Studio, and walks you through a mini project: training and deploying a simple ML model.
@@ -568,4 +552,5 @@ Uploaded it to S3
 Deployed it as a real-time endpoint
 
 Amazon SageMaker Studio makes it much easier to build, train, and deploy ML models end-to-end in the cloud.
+
 
