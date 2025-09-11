@@ -147,11 +147,3 @@ readability, citation accuracy.
 **Workshop Exercise:** - Zero-shot summarizer vs RAG + few-shot
 summarizer. - Compare outputs for hallucinations and factuality.
 
-## Workshop Flow (3--4 hrs)
-
-1.  Intro (GenAI vs Agentic AI) --- 15m.
-2.  Transformer & LLM review --- 30m.
-3.  Prompt engineering patterns --- 45m.
-4.  Hands-on summarization --- 45m.
-5.  Agentic AI demo & safety --- 30m.
-6.  Q&A --- 15m.
