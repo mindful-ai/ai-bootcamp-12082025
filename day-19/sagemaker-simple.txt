@@ -1,0 +1,61 @@
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import joblib
+import boto3
+import sagemaker
+import os
+
+
+iris = load_iris()
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.2, random_state=42
+)
+
+
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+
+print("✅ Training complete. Accuracy:", model.score(X_test, y_test))
+
+
+# Save model locally
+joblib.dump(model, "iris_model.pkl")
+
+# Upload model to S3
+sagemaker_session = sagemaker.Session()
+bucket = sagemaker_session.default_bucket()
+prefix = "iris-model"
+
+s3_path = sagemaker_session.upload_data("iris_model.pkl", bucket=bucket, key_prefix=prefix)
+print("📦 Model uploaded to S3:", s3_path)
+
+------------------------------------------------------------------------------------------------------
+from sagemaker.sklearn.model import SKLearnModel
+
+role = sagemaker.get_execution_role()
+
+sklearn_model = SKLearnModel(
+    model_data=s3_path,
+    role=role,
+    entry_point="inference.py",  # custom script for inference
+    framework_version="0.23-1"
+)
+
+
+predictor = sklearn_model.deploy(
+    initial_instance_count=1,
+    instance_type="ml.m5.large"
+)
+
+
+result = predictor.predict(X_test[:5])
+print("🔮 Predictions:", result)
+
+------------------------------------------------------------------------------------------------------
+
+When finished:
+
+Go to SageMaker → Studio → Domains
+Shut down Studio
+Delete unused endpoints and instances
