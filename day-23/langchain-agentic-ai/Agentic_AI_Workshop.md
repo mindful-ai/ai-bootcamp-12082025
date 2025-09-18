@@ -1,4 +1,4 @@
-# One-Day Workshop on Agentic AI -- Foundations and Assessment
+# Workshop on Agentic AI -- Foundations 
 
 ## 1. Definition of Agentic AI
 
