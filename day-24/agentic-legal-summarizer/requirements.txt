@@ -1,0 +1,10 @@
+langchain>=0.1
+langgraph>=0.2
+openai
+chromadb
+pdfplumber
+tqdm
+python-dotenv
+faiss-cpu
+unstructured
+pytest

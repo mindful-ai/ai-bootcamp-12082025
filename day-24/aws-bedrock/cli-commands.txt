@@ -1,0 +1,34 @@
+
+------------- Text Generation ------------
+aws bedrock-runtime converse --model-id deepseek.v3-v1:0 --messages '[{"role":"user","content":[{"text":"Hello, Bedrock!"}]}]' --inference-config '{"temperature":1}' --additional-model-request-fields '{}' --region ap-south-1
+
+aws bedrock-runtime converse --model-id "deepseek.v3-v1:0" --messages "[{\"role\":\"user\",\"content\":[{\"text\":\"Hello, Bedrock!\"}]}]" --inference-config "{\"temperature\":1}" --additional-model-request-fields "{}" --region "ap-south-1" > output.json
+
+------------- Image Generation ------------
+aws bedrock-runtime invoke-model \
+--model-id amazon.titan-image-generator-v1 \
+--body "{\"textToImageParams\":{\"text\":\"\"},\"taskType\":\"TEXT_IMAGE\",\"imageGenerationConfig\":{\"cfgScale\":8,\"seed\":0,\"width\":1024,\"height\":1024,\"numberOfImages\":3}}" \
+--cli-binary-format raw-in-base64-out \
+ \
+--region ap-south-1 \
+invoke-model-output.txt
+
+------------- Agent Invocation ------------
+aws bedrock-runtime converse \
+    --model-id amazon.nova-lite-v1:0 \
+    --region us-east-1 \
+    --body '{
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "Summarize the following legal document in simple English: Non-Disclosure Agreement (NDA) ... [your legal text here]"
+                    }
+                ]
+            }
+        ],
+        "temperature": 0.3,
+        "max_tokens": 300
+    }'
